@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import django_heroku
 import dj_database_url
 
 if os.path.isfile('vapeshop/.env'):
@@ -209,6 +210,7 @@ STATICFILES_DIRS = [
 # STATIC_ROOT is used for production, where Django will collect all static files into one directory
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # This should not be the same as STATICFILES_DIRS
 
+django_heroku.settings(locals())
 # Media files (uploads, user-generated content, etc.)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
