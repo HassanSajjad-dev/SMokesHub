@@ -19,7 +19,8 @@ from .models import (
     Batteries,
     Accessories,
     BaseLiquids,
-    Image)
+    Image,
+    Mods)
 admin.site.register(CategoryGroupings)
 admin.site.register(SubCategory)
 admin.site.register(Pods)
@@ -33,6 +34,7 @@ admin.site.register(FlavorConcentrates)
 admin.site.register(Batteries)
 admin.site.register(Accessories)
 admin.site.register(Image)
+admin.site.register(Mods)
 
 
 #
