@@ -577,9 +577,9 @@ def fetch_and_update_tanks():
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
     }
 
-    for i in range(1, 24):
+    for i in range(1, 2):
             print(f"scrappig {i}")
-            url = f"enter url"
+            url = f"https://vapebar.pk/product-category/tanks/"
             print(headers)
             # Send a GET request to the website
             response = requests.get(url,headers=headers)
@@ -708,7 +708,7 @@ def fetch_and_update_coils():
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
     }
 
-    for i in range(1, 5):
+    for i in range(1, 4):
             print(f"scrappig {i}")
             url = f"https://vapebar.pk/product-category/accessories/coils-pods/page/{i}/"
             print(headers)
