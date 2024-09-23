@@ -19,7 +19,7 @@ from .models import (
     Batteries,
     Accessories,
     BaseLiquids,
-    Images)
+    Image)
 admin.site.register(CategoryGroupings)
 admin.site.register(SubCategory)
 admin.site.register(Pods)
@@ -32,7 +32,7 @@ admin.site.register(BaseLiquids)
 admin.site.register(FlavorConcentrates)
 admin.site.register(Batteries)
 admin.site.register(Accessories)
-admin.site.register(Images)
+admin.site.register(Image)
 
 
 #
