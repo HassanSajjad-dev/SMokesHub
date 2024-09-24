@@ -415,7 +415,7 @@ class Image(models.Model):
     """
     Model to store individual images for products.
     """
-    image = models.ImageField(upload_to='products/images/')
+    image = models.ImageField(upload_to='images/')
     description = models.CharField(max_length=254, null=True, blank=True)
 
     def __str__(self):

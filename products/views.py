@@ -282,10 +282,10 @@ def flavors_by_brand(request):
     return render(request, 'products/products.html', context)
 def update_disposable_vape_product(request):
     fetch_and_update_disposable_pods()
-    fetch_and_update_e_liquids()
-    fetch_and_update_mods()..
-    fetch_and_update_coils()
-    fetch_and_update_accessories()..
-    fetch_and_update_tanks()
-    fetch_and_update_pods()
+    #fetch_and_update_e_liquids()
+    #fetch_and_update_mods()
+    #fetch_and_update_coils()
+    #fetch_and_update_accessories()
+    #fetch_and_update_tanks()
+    #fetch_and_update_pods()
     return HttpResponse("Disposable Pods have been updated.")

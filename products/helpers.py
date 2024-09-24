@@ -3,7 +3,8 @@ from bs4 import BeautifulSoup
 from dataclasses import dataclass
 from typing import List
 from urllib.parse import urlparse
-import subprocess
+from django.conf import settings
+from django.core.files.storage import default_storage
 from .models import *
 
 headers = {
@@ -14,6 +15,7 @@ def save_image(image_url, save_path):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
     }
+    save_path = os.path.join(settings.MEDIA_ROOT, save_path)
     # Make a GET request to fetch the image
     response = requests.get(image_url, stream=True,headers=headers)
     response.raise_for_status()
@@ -114,7 +116,7 @@ def fetch_and_update_disposable_pods():
                             parsed_url = urlparse(image)
                             image_filename = parsed_url.path.split('/')[-1]
                             save_path = os.path.join(save_directory, image_filename)
-                            images.append(save_image(image, save_path))
+                            images.append(save_image(image, image_filename))
                         product_obj = Product(name=product_name, price=original_price, sale_price=sale_price,
                                               url=product_url, image_urls=image_urls, description=product_description,
                                               brand=brand_name)
@@ -249,7 +251,7 @@ def fetch_and_update_e_liquids():
                             parsed_url = urlparse(image)
                             image_filename = parsed_url.path.split('/')[-1]
                             save_path = os.path.join(save_directory, image_filename)
-                            images.append(save_image(image, save_path))
+                            images.append(save_image(image, image_filename))
                         product_obj = Product(name=product_name, price=original_price, sale_price=sale_price,
                                               url=product_url, image_urls=image_urls, description=product_description,
                                               brand=brand_name)
@@ -288,6 +290,7 @@ def fetch_and_update_e_liquids():
 
                     except Exception as e:
                         print(f"An error occurred: {e}")
+
 
 
 
@@ -382,7 +385,7 @@ def fetch_and_update_pods():
                             parsed_url = urlparse(image)
                             image_filename = parsed_url.path.split('/')[-1]
                             save_path = os.path.join(save_directory, image_filename)
-                            images.append(save_image(image, save_path))
+                            images.append(save_image(image, image_filename))
                         product_obj = Product(name=product_name, price=original_price, sale_price=sale_price,
                                               url=product_url, image_urls=image_urls, description=product_description,
                                               brand=brand_name)
@@ -515,7 +518,7 @@ def fetch_and_update_mods():
                             parsed_url = urlparse(image)
                             image_filename = parsed_url.path.split('/')[-1]
                             save_path = os.path.join(save_directory, image_filename)
-                            images.append(save_image(image, save_path))
+                            images.append(save_image(image, image_filename))
                         product_obj = Product(name=product_name, price=original_price, sale_price=sale_price,
                                               url=product_url, image_urls=image_urls, description=product_description,
                                               brand=brand_name)
@@ -647,7 +650,7 @@ def fetch_and_update_tanks():
                             parsed_url = urlparse(image)
                             image_filename = parsed_url.path.split('/')[-1]
                             save_path = os.path.join(save_directory, image_filename)
-                            images.append(save_image(image, save_path))
+                            images.append(save_image(image, image_filename))
                         product_obj = Product(name=product_name, price=original_price, sale_price=sale_price,
                                               url=product_url, image_urls=image_urls, description=product_description,
                                               brand=brand_name)
@@ -778,7 +781,7 @@ def fetch_and_update_coils():
                             parsed_url = urlparse(image)
                             image_filename = parsed_url.path.split('/')[-1]
                             save_path = os.path.join(save_directory, image_filename)
-                            images.append(save_image(image, save_path))
+                            images.append(save_image(image, image_filename))
                         product_obj = Product(name=product_name, price=original_price, sale_price=sale_price,
                                               url=product_url, image_urls=image_urls, description=product_description,
                                               brand=brand_name)
@@ -908,7 +911,7 @@ def fetch_and_update_accessories():
                             parsed_url = urlparse(image)
                             image_filename = parsed_url.path.split('/')[-1]
                             save_path = os.path.join(save_directory, image_filename)
-                            images.append(save_image(image, save_path))
+                            images.append(save_image(image, image_filename))
                         product_obj = Product(name=product_name, price=original_price, sale_price=sale_price,
                                               url=product_url, image_urls=image_urls, description=product_description,
                                               brand=brand_name)

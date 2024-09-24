@@ -21,6 +21,7 @@ from .models import (
     BaseLiquids,
     Image,
     Mods)
+
 admin.site.register(CategoryGroupings)
 admin.site.register(SubCategory)
 admin.site.register(Pods)
