@@ -234,7 +234,8 @@
 
     						    </div>
     						</div>
-                            <a href="{% url 'product_detail' product.slug %}" aria-label="Opens the product details page">
+                           <a href="{% url 'product_detail' product.id %}"
+aria-label="Opens the product details page">
 
     						<img src="{{ product.images.first.image.url }}" class="img-fluid rounded thumbnail-image " style="height: 200px;width: 250px">
 
@@ -387,7 +388,8 @@
 {#    <div class="h-50 card-img-top text-center">#}
 {##}
 {#        <!-- image or placeholder -->#}
-{#        <a href="{% url 'product_detail' product.slug %}" aria-label="Opens the product details page">#}
+{#       <a href="{% url 'product_detail' product.id %}"
+aria-label="Opens the product details page">#}
 {##}
 {#            {% if product.image %}#}
 {##}

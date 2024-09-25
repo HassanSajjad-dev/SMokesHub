@@ -17,11 +17,8 @@ urlpatterns = [
     re_path(r'^pods-systems/$', views.pods_by_brand, name='pods_by_brand'),
     re_path(r'^e-liquid/$', views.flavors_by_brand, name='flavors_by_brand'),
 
-    path(
-        '<slug:slug>/',
-        views.ProductDetails.as_view(),
-        name='product_detail'
-    ),
+    path('<int:id>/', views.ProductDetails.as_view(), name='product_detail'),
+
     path(
         'edit/<slug:slug>/',
         views.EditExistingProduct.as_view(),

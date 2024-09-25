@@ -251,7 +251,7 @@
                             </div>
                             <div class="product-thumb">
                                 <div class="thumb-inner">
-                            <a href="{% url 'product_detail' product.slug %}" aria-label="Opens the product details page">
+                           <a href="{% url 'product_detail' product.id %}" aria-label="Opens the product details page">
                                         <img src="{{ product.images.first.image.url }}" alt="img">
                                     </a>
                                     <div class="thumb-group">
@@ -348,7 +348,8 @@
                                 </div>
                                 <div class="product-thumb">
                                     <div class="thumb-inner">
-                                        <a href="{% url 'product_detail' product.slug %}">
+                                        <a href="{% url 'product_detail' product.id %}">View Product</a>
+
                                             <img src="{{ product.images.first.image.url }}" alt="img">
                                         </a>
                                         <div class="thumb-group">
@@ -367,7 +368,8 @@
                                 </div>
                                 <div class="product-info">
                                     <h5 class="product-name product_title">
-                                        <a href="{% url 'product_detail' product.slug %}">{{product.name}}</a>
+                                        <a href="{% url 'product_detail' product.id %}">View Product</a>
+{{product.name}}</a>
                                     </h5>
                                     <div class="group-info">
                                         <div class="stars-rating">

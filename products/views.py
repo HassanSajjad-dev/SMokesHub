@@ -127,12 +127,12 @@ class ProductDetails(View):
     View to return a single product
     """
 
-    def get(self, request, slug, *args, **kwargs):
+    def get(self, request, id, *args, **kwargs):
         """"
         Returns a single product and it details
         """
 
-        individual_product = get_object_or_404(AllProducts, slug=slug)
+        individual_product = get_object_or_404(AllProducts, id=id)
         slug = individual_product.slug
         form = ProductReviewForm()
 
