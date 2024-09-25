@@ -280,12 +280,32 @@ def flavors_by_brand(request):
         'products': elequid,
     }
     return render(request, 'products/products.html', context)
+
+def update_image_paths(request):
+    base_path = "C:\\Users\\HASSAN\\PycharmProjects\\kabhi_kusi_kabhi_gam\\Vape-Store-main\\media\\"
+    images_updated = 0
+
+    # Iterate through all ImageModel instances
+    for image_instance in Image.objects.all():
+        full_path = image_instance.image.name
+        # Check if the full path contains the base path we want to replace
+        if full_path.startswith(base_path):
+            relative_path = full_path.replace(base_path, '')
+            # Update the image field with the new relative path
+            image_instance.image.name = relative_path
+            print(image_instance.image.name)
+            print('***************************')
+            image_instance.save()
+            images_updated += 1
+
+    # Return a simple HttpResponse indicating how many images were updated
+    return HttpResponse(f"{images_updated} image paths were updated.")
 def update_disposable_vape_product(request):
-    fetch_and_update_disposable_pods()
-    #fetch_and_update_e_liquids()
-    #fetch_and_update_mods()
-    #fetch_and_update_coils()
-    #fetch_and_update_accessories()
-    #fetch_and_update_tanks()
-    #fetch_and_update_pods()
+   #fetch_and_update_disposable_pods()..
+    #fetch_and_update_e_liquids()..
+    #fetch_and_update_mods()..
+    #fetch_and_update_coils()..
+    #fetch_and_update_accessories()..
+    fetch_and_update_tanks()
+    #fetch_and_update_pods()..
     return HttpResponse("Disposable Pods have been updated.")

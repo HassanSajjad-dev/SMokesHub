@@ -123,7 +123,6 @@ def fetch_and_update_disposable_pods():
                         products_list.append(product_obj)
                         print("image url: ",image_urls)
                         print("brand name: ",brand_name)
-
                     # Update or create DisposableVapes objects
                     category, _ = CategoryGroupings.objects.get_or_create(name="Pod Kits")
                     sub_category, _ = SubCategory.objects.get_or_create(name="disposable")
@@ -179,7 +178,7 @@ def fetch_and_update_e_liquids():
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
     }
 
-    for i in range(1,24):
+    for i in range(16,24):
             print(f"scrappig {i}")
             url = f"https://vapebar.pk/product-category/nic-salt-e-liquid/page/{i}/"
             print(headers)
