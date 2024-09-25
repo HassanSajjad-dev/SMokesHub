@@ -133,7 +133,7 @@ class ProductDetails(View):
         """
 
         individual_product = get_object_or_404(AllProducts, id=id)
-        slug = individual_product.slug
+        slug = individual_product.id
         form = ProductReviewForm()
 
         reviews = ProductReviews.objects.filter(product=individual_product.id)
@@ -166,7 +166,7 @@ class EditExistingProduct(View):
             return redirect(reverse('home'))
 
         individual_product = get_object_or_404(AllProducts, slug=slug)
-        slug = individual_product.slug
+        slug = individual_product.id
         form = ProductForm(instance=individual_product)
 
         context = {
@@ -184,7 +184,7 @@ class EditExistingProduct(View):
         """
 
         individual_product = get_object_or_404(AllProducts, slug=slug)
-        slug = individual_product.slug
+        slug = individual_product.id
         form = ProductForm(request.POST, request.FILES,
                            instance=individual_product)
 

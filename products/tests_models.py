@@ -22,7 +22,7 @@ class TestModels(TestCase):
 
     def test_name_is_copied_into_slug_field_upon_creation(self):
 
-        self.assertEqual(self.product.slug, 'test_name')
+        self.assertEqual(self.product.id, 'test_name')
 
     def test_rating_is_correctly_calculated_the_average_of_all_ratings(self):
         self.assertEqual(self.product.current_rating, 4.58)
@@ -40,9 +40,9 @@ class TestModels(TestCase):
 
     def test_if_slug_is_created_from_name_on_save(self):
         self.product.save()
-        self.assertEqual(self.product.slug, self.product.name)
+        self.assertEqual(self.product.id, self.product.name)
 
     def test_if_slug_changes_if_name_changes(self):
         self.product.name = 'new name'
         self.product.save()
-        self.assertEqual(self.product.slug, 'new-name')
+        self.assertEqual(self.product.id, 'new-name')

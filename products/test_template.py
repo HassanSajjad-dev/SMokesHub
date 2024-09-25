@@ -33,7 +33,7 @@ class TestPage(TestCase):
     def test_products_details_page_template(self):
         response = self.client.get(reverse(
             "product_detail", args=[
-                self.product.slug
+                self.product.id
             ]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "products/product-detail.html")
