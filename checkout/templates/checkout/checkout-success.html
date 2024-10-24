@@ -100,7 +100,7 @@
 
                 <p class="my-2 font-weight-bold">
                     <!-- opens a new tab to see the product info this is because if a user is not signed in they cannot return to the order confirmation -->
-                    <a href="{% url 'product_detail' ordered_product.product.slug %}" target="_blank" aria-label="Takes you back to {{ ordered_product.product.name }}'s details in a new tab">
+                    <a href="{% url 'product_detail' ordered_product.product.id %}" target="_blank" aria-label="Takes you back to {{ ordered_product.product.name }}'s details in a new tab">
                         {{ ordered_product.product.name }}
                     </a>
                 </p>

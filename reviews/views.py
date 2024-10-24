@@ -29,9 +29,9 @@ class CreateReview(LoginRequiredMixin, View):
         product = get_object_or_404(AllProducts, id=product_id)
         redirect_url = request.POST.get('redirect_url')
 
-        if redirect_url != f'/products/{product.slug}/':
+        if redirect_url != f'/products/{product.id}/':
 
-            redirect_url = f'/products/{product.slug}/'
+            redirect_url = f'/products/{product.id}/'
 
         form = ProductReviewForm(request.POST)
 
@@ -90,7 +90,7 @@ class EditReview(LoginRequiredMixin, View):
             messages.error(request, 'You do not have permission to edit \
                 this review.')
 
-            return redirect('product_detail', product.slug)
+            return redirect('product_detail', product.id)
 
     def post(self, request, product_id, review_id):
         """
@@ -102,9 +102,9 @@ class EditReview(LoginRequiredMixin, View):
 
         redirect_url = request.POST.get('redirect_url')
 
-        if redirect_url != f'/products/{review.product.slug}/':
+        if redirect_url != f'/products/{review.product.id}/':
 
-            redirect_url = f'/products/{review.product.slug}/'
+            redirect_url = f'/products/{review.product.id}/'
 
         form = ProductReviewForm(instance=review)
 
@@ -146,9 +146,9 @@ class DeleteReview(View):
             review = get_object_or_404(ProductReviews, id=review_id)
             redirect_url = request.POST.get('redirect_url')
 
-            if redirect_url != f'/products/{review.product.slug}/':
+            if redirect_url != f'/products/{review.product.id}/':
 
-                redirect_url = f'/products/{review.product.slug}/'
+                redirect_url = f'/products/{review.product.id}/'
 
             review.delete()
 

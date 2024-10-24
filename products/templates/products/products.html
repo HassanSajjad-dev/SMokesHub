@@ -123,7 +123,7 @@
 									</div>
 									<div class="product-thumb">
 										<div class="thumb-inner">
-											<a href="{% url 'product_detail' product.id %}"></a>
+											<a href="{% url 'product_detail' product.id %}">View Product</a>
 
 												<img src="{{ product.images.first.image.url }}" alt="img">
 											</a>
@@ -398,44 +398,73 @@
 						</div>
 					</div>
 					<div class="box-footer col-xs-12 col-sm-6 col-md-4 col-lg-4">
-						<div class="herald-custommenu default">
-                        <h2 class="widgettitle">Contact</h2>
-                        <div class="single-img">
-                            42 Khayaban-e-Firdousi, Block A Phase 1 Johar
-                            Town, Lahore, Punjab 54782
+                    <div class="store-addresses">
+                        <h2 class="widgettitle">Our Store Locations</h2>
+
+                            <ul .store-addresses {
+                                background-color: #1a1a1a;
+                                color: white;
+                                padding: 20px;
+                                border-radius: 8px;
+                                max-width: 600px;
+                                margin: 20px auto;
+                                font-family: Arial, sans-serif;
+                            }
+
+                            .store-addresses h2 {
+                                text-align: center;
+                                margin-bottom: 10px;
+                                font-size: 24px;
+                                font-weight: bold;
+                                color: #f0a500;
+                            }
+
+                            .address-list {
+                                list-style: none;
+                                padding: 0;
+                            }
+
+                            .address-list li {
+                                margin-bottom: 10px;
+                                font-size: 16px;
+                                line-height: 1.6;
+                            }
+                         class="address-list">
+
+                                <li><strong>Bahria Town Branch:</strong> Plaza 178, Gulmohar Block, Bahria Town, Lahore</li>
+                                <li><strong>Johar Town Branch:</strong> 42 Block A, Khayaban-e-Firdousi, Phase 1, Johar Town, Lahore</li>
+                                <li><strong>DHA Phase 6 Branch:</strong> Ground Floor 102, CCA, DHA Phase 6, Lahore</li>
+                                <li><strong>DHA Phase 5 Branch:</strong> Plaza No 69, Ground Floor, Smokeshub, Sector C, Phase 5, DHA, Lahore, Punjab</li>
+                            </ul>
                         </div>
+
                         <ul class="menu">
                             <li class="menu-item">
-                                Phone: <a href="tel:(+92) 303-0584477"><strong>(+92) 303-0584477</strong></a>
-                            </li>0
+                                Phone: <a href="tel:(+92) 303-0584477"><strong>0312-7899312</strong></a>
+                            </li>
 {#                            <li class="menu-item">#}
 {#                                Fax: <a href="tel:(+123) 456 789 - (+123) 666 888"><strong>(+123) 666 888</strong></a>#}
 {#                            </li>#}
 {#                            <li class="menu-item">#}
 {#                                Email: <a href="mailto:Contact@yourcompany.com"><strong>Contact@yourcompany.com</strong></a>#}
 {#                            </li>#}
-                            <li class="menu-item">
+                             <li class="menu-item">
                                 Follow us:
                                 <div class="herald-socials">
                                     <ul class="socials">
                                         <li>
-                                            <a href="#" class="social-item" target="_blank">
+                                            <a href="https://www.facebook.com/share/K8WV8HnBim3yLDAG/" class="social-item" target="https://www.facebook.com/share/K8WV8HnBim3yLDAG/">
                                                 <i class="icon fa fa-facebook-square"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" class="social-item" target="_blank">
-                                                <i class="icon fa fa-twitter-square"></i>
+                                            <a href="https://www.instagram.com/smokeshubpk/" class="social-item" target="_blank">
+                                                <i class="fa fa-instagram"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" class="social-item" target="_blank">
-                                                <i class="icon fa fa-google-plus-square"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="social-item" target="_blank">
-                                                <i class="icon fa fa-linkedin-square"></i>
+                                            <a href="https://www.tiktok.com/@smokeshubpakistan?lang=en" class="social-item" target="_blank">
+                                                <i class="fa-brands fa-tiktok"></i>
                                             </a>
                                         </li>
                                     </ul>
